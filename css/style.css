@@ -14,12 +14,29 @@ html {
     text-align: center;
 }
 .movie-title {
+    animation: boing 4s ease-in-out forwards;
+    display: inline-block;
+    left: -600px;
+    position: relative;
     text-transform: uppercase;
 }
+@keyframes boing {
+    20% {left: 400px;}
+    40% {left: -240px;}
+    60% {left: 120px;}
+    80% {left: -40px;}
+    100% {left: 0;}
+}
 .movie-poster-container img {
+    cursor: pointer;
     margin-top: 2rem;
     height: 500px;
     border-radius: 10px;
+    transition: all 0.8s;
+}
+.movie-poster-container img:hover {
+    box-shadow: 8px 8px 8px -4px rgb(70, 80, 80);
+    transform: scale(1.05);
 }
 .movie-rating {
     display: inline-block;
@@ -90,4 +107,12 @@ footer ul li a {
     text-transform: uppercase;
     text-decoration: none;
     color: #777;
+}
+.movie-info-container > *:not(p.movie-info-quote, div.movie-info-actions) {
+    animation: fade-in 3s ease-in-out forwards;
+    animation-delay: 2s;
+    opacity: 0;
+}
+@keyframes fade-in {
+    100% {opacity: 1;}
 }
